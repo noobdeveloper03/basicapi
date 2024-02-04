@@ -24,4 +24,16 @@ public class UserDaoImpl implements UserDao {
         user = userRepository.save(user);
         return user.getUserId();
     }
+
+    @Override
+    public Boolean doesExist(User user) {
+        List<User> userList = userRepository.findByUserNameEmail(user.getUsername(),user.getEmail());
+
+        if(!userList.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+
 }

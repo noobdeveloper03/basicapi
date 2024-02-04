@@ -8,4 +8,6 @@ public interface UserDao {
     List<User> getUsers();
 
     Long createUser(User user);
+
+    Boolean doesExist(User user);
 }
