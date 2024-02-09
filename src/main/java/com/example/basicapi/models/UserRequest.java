@@ -7,6 +7,10 @@ public class UserRequest {
 
     @Getter
     @Setter
+    private String userId;
+
+    @Getter
+    @Setter
     private String username;
 
     @Getter

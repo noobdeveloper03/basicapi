@@ -10,4 +10,8 @@ public interface UserDao {
     Long createUser(User user);
 
     Boolean doesExist(User user);
+
+    User updateUser(User user);
+
+    void deleteUser(Long userId);
 }
