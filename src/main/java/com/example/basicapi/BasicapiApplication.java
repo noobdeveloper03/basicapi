@@ -14,11 +14,6 @@ public class BasicapiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BasicapiApplication.class, args);
-		System.out.println("############Sample");
-		System.out.println("############Sample");
-		System.out.println("############Sample");
-		System.out.println("############Sample");
-		System.out.println("############Sample");
 	}
 
 	@PostConstruct

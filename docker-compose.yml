@@ -24,10 +24,10 @@ services:
     depends_on:
       - mysql
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/basicapi
-      SPRING_DATASOURCE_USERNAME: db_user
-      SPRING_DATASOURCE_PASSWORD: db_password
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: db_user
+      MYSQL_PASSWORD: db_password
     networks:
       - custom-network
 volumes:
