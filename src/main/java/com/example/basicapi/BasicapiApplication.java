@@ -18,8 +18,8 @@ public class BasicapiApplication {
 
 	@PostConstruct
 	public void displayProperties() {
-		System.out.println("######DB URL: " + env.getProperty("spring.datasource.url"));
-		System.out.println("######DB Username: " +  env.getProperty("spring.datasource.username"));
-		System.out.println("######DB Password: " +  env.getProperty("spring.datasource.password"));
+		System.out.println("Database URL: " + env.getProperty("spring.datasource.url"));
+		System.out.println("Database Username: " +  env.getProperty("spring.datasource.username"));
+		System.out.println("Database Password: " +  env.getProperty("spring.datasource.password"));
 	}
 }

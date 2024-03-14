@@ -5,12 +5,12 @@ services:
     container_name: mysql_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_ROOT_PASSWORD: root_password #Password for Mysql inside container,
       MYSQL_DATABASE: basicapi
       MYSQL_USER: db_user
-      MYSQL_PASSWORD: db_password
+      MYSQL_PASSWORD: db_password #Password for accessing mysql
     ports:
-      - ":3306"
+      - ":3306" #This will Dynamically allocate any available host ports
     networks:
       - custom-network
     volumes:
@@ -22,17 +22,17 @@ services:
     ports:
       - "8080:8080"
     depends_on:
-      - mysql
+      - mysql #specifies that we need to fire up mysql first before starting our app
     environment:
-      MYSQL_HOST: mysql
+      MYSQL_HOST: mysql #Use the servicename that we specifed in building our Mysql image
       MYSQL_PORT: 3306
       MYSQL_USERNAME: db_user
       MYSQL_PASSWORD: db_password
     networks:
       - custom-network
 volumes:
-  mysql_data: {}
+  mysql_data: {} #This will help store data inside the container even upon restart
 networks:
   custom-network:
-    driver: bridge
+    driver: bridge #Creating custom network can help group containers
 
