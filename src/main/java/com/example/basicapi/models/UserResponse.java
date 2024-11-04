@@ -1,8 +1,11 @@
 package com.example.basicapi.models;
 
+import com.example.basicapi.dao.entity.User;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 public class UserResponse {
 
@@ -13,11 +16,11 @@ public class UserResponse {
     @Setter
     @Getter
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
-    private Object result;
+    private List<User> users;
 
-    public UserResponse(String message, Object result) {
+    public UserResponse(String message, List<User> users) {
         this.message = message;
-        this.result = result;
+        this.users = users;
     }
 
     public UserResponse(String message) {
