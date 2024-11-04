@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: springbootapp
-          image: noobdeveloper03/basicapi-springbootapp:v1.0.0
+          image: noobdeveloper03/basicapi-springbootapp:v1.0.4
           env:
             - name: MYSQL_HOST
               value: "mysql"
@@ -35,11 +35,10 @@ kind: Service
 metadata:
   name: basicapi-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-    - port: 80
+    - port: 8080
       targetPort: 8080
-      protocol: TCP
-      name: http
+      nodePort: 30001
   selector:
     app: basicapi
