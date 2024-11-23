@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: springbootapp
-          image: noobdeveloper03/basicapi-springbootapp:v1.0.4
+          image: noobdeveloper03/basicapi-springbootapp:v1.0.5
           env:
             - name: MYSQL_HOST
               value: "mysql"
